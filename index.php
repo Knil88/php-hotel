@@ -48,14 +48,39 @@
             'vote' => 2,
             'distance_to_center' => 50..' '.'chilometri'
         ],
+        
     
     ];
+    if(isset($_GET['con_parcheggio']) && $_GET['con_parcheggio'] == 1) {
+        $hotels = array_filter($hotels, function($hotel) {
+            return $hotel['parking'] == true;
+        });
+    }
+    
+    if(isset($_GET['senza_parcheggio']) && $_GET['senza_parcheggio'] == 1) {
+        $hotels = array_filter($hotels, function($hotel) {
+            return $hotel['parking'] == false;
+        });
+    }
 
       
 
   ?>
-  
-  <table class="table table-dark">
+  <form action="" method="get">
+    <label>
+        <input type="checkbox" name="con_parcheggio" value="1">
+        Mostra solo gli hotel con parcheggio
+    </label>
+    <label>
+        <input type="checkbox" name="senza_parcheggio" value="1">
+        Mostra solo gli hotel senza parcheggio
+    </label>
+    <div class="c">
+    <input type="submit" value="Filtra" >
+    </div>
+</form>
+
+  <table class="table table-dark text-center">
   <thead>
     <tr>
       <th scope="col">Nome Hotel</th>
@@ -69,11 +94,13 @@
   <tbody>
     <?php
         foreach($hotels as $hotel){
+           
+
             if ($hotel['parking'] === true) {
                 $hotel['parking'] = 'Disponibile';
             }
             else{
-                $hotel['parking'] = 'Viaggia Và';
+                $hotel['parking'] = 'Non Disponibile';
             }
             echo  '<tr></tr>';
             foreach($hotel as $key => $value){
