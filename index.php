@@ -9,47 +9,96 @@
     <title>Php Hotel</title>
 </head>
 <body>
+   
     <?php
     $hotels = [
 
         [
             'name' => 'Hotel Belvedere',
-            'description' => 'Hotel Belvedere Descrizione',
+            'description' => 'Bello',
             'parking' => true,
             'vote' => 4,
-            'distance_to_center' => 10.4
+            'distance_to_center' => 10.4.' '.'chilometri'
         ],
         [
             'name' => 'Hotel Futuro',
-            'description' => 'Hotel Futuro Descrizione',
+            'description' => 'Fa Schifooo',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 2
+            'distance_to_center' => 2..' '.'chilometri' 
         ],
         [
             'name' => 'Hotel Rivamare',
-            'description' => 'Hotel Rivamare Descrizione',
+            'description' => 'Fa Proprio Schifo',
             'parking' => false,
             'vote' => 1,
-            'distance_to_center' => 1
+            'distance_to_center' => 1..' '.'chilometri'
         ],
         [
             'name' => 'Hotel Bellavista',
-            'description' => 'Hotel Bellavista Descrizione',
+            'description' => 'Mica Pizza e Fichi',
             'parking' => false,
             'vote' => 5,
-            'distance_to_center' => 5.5
+            'distance_to_center' => 5.5.' '.'chilometri'
         ],
         [
             'name' => 'Hotel Milano',
-            'description' => 'Hotel Milano Descrizione',
+            'description' => 'Fa Proprio Schifo',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 50
+            'distance_to_center' => 50..' '.'chilometri'
         ],
     
     ];
-    
+
+      
+
+  ?>
+  
+  <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Nome Hotel</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parcheggio</th>
+      <th scope="col">Voto</th>
+      <th scope="col">Distanza Centro</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+        foreach($hotels as $hotel){
+            if ($hotel['parking'] === true) {
+                $hotel['parking'] = 'Disponibile';
+            }
+            else{
+                $hotel['parking'] = 'Viaggia Và';
+            }
+            echo  '<tr></tr>';
+            foreach($hotel as $key => $value){
+                echo '<td>' . $value . '</td>';
+                }
+        }
+      
+
+       
     ?>
+   
+     
+     
+    </tr>
+    <tr>
+      
+    </tr>
+    <tr>
+      
+     
+    </tr>
+  </tbody>
+</table>
+    
+   
+      
 </body>
 </html>
