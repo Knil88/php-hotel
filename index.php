@@ -18,35 +18,35 @@
             'description' => 'Bello',
             'parking' => true,
             'vote' => 4,
-            'distance_to_center' => 10.4.' '.'chilometri'
+            'distance_to_center' => 10.4.' '.'Chilometri'
         ],
         [
             'name' => 'Hotel Futuro',
             'description' => 'Fa Schifooo',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 2..' '.'chilometri' 
+            'distance_to_center' => 2..' '.'Chilometri' 
         ],
         [
             'name' => 'Hotel Rivamare',
             'description' => 'Fa Proprio Schifo',
             'parking' => false,
             'vote' => 1,
-            'distance_to_center' => 1..' '.'chilometri'
+            'distance_to_center' => 1..' '.'Chilometri'
         ],
         [
             'name' => 'Hotel Bellavista',
             'description' => 'Mica Pizza e Fichi',
             'parking' => false,
             'vote' => 5,
-            'distance_to_center' => 5.5.' '.'chilometri'
+            'distance_to_center' => 5.5.' '.'Chilometri'
         ],
         [
             'name' => 'Hotel Milano',
             'description' => 'Fa Proprio Schifo',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 50..' '.'chilometri'
+            'distance_to_center' => 50..' '.'Chilometri'
         ],
         
     
@@ -66,17 +66,17 @@
       
 
   ?>
-  <form action="" method="get">
-    <label>
+  <form action="" method="get" class="d-flex justify-content-center m-4">
+    <label class="mx-2">
         <input type="checkbox" name="con_parcheggio" value="1">
         Mostra solo gli hotel con parcheggio
     </label>
-    <label>
+    <label class="mx-2">
         <input type="checkbox" name="senza_parcheggio" value="1">
         Mostra solo gli hotel senza parcheggio
     </label>
     <div class="c">
-    <input type="submit" value="Filtra" >
+    <input type="submit" value="Filtra" class="mx-2 p-1 " >
     </div>
 </form>
 
@@ -104,7 +104,7 @@
             }
             echo  '<tr></tr>';
             foreach($hotel as $key => $value){
-                echo '<td>' . $value . '</td>';
+                echo '<td class="">' . $value . '</td>';
                 }
         }
       
